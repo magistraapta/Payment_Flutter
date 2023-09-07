@@ -12,22 +12,22 @@ class MainPage extends StatelessWidget {
           CardItem(
             name: 'adidas',
             imageUrl: 'item-1.png',
-            price: 200,
+            desc: 'hello world',
           ),
           CardItem(
             name: 'adidas',
             imageUrl: 'item-2.png',
-            price: 200,
+            desc: 'hello world',
           ),
           CardItem(
             name: 'adidas',
             imageUrl: 'item-3.png',
-            price: 200,
+            desc: 'hello world',
           ),
           CardItem(
             name: 'adidas',
             imageUrl: 'item-4.png',
-            price: 200,
+            desc: 'hello world',
           ),
         ],
       ),

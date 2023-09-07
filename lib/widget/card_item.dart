@@ -6,8 +6,14 @@ import 'package:payment/pages/detail_page.dart';
 class CardItem extends StatelessWidget {
   final String name;
   final String imageUrl;
-  final int price;
-  const CardItem({Key? key, required this.imageUrl, required this.name,required this.price})
+  final String desc;
+  // final String desc;
+  const CardItem(
+      {Key? key,
+      required this.imageUrl,
+      required this.name,
+      required this.desc
+      })
       : super(key: key);
 
   @override
@@ -19,7 +25,13 @@ class CardItem extends StatelessWidget {
           splashColor: Colors.blue.withAlpha(30),
           onTap: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => DetailPage()));
+                context,
+                MaterialPageRoute(
+                    builder: (context) => DetailPage(
+                          name: '${name}',
+                          imageUrl: '${imageUrl}',
+                          desc: '${desc}',
+                        )));
           },
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
@@ -49,11 +61,7 @@ class CardItem extends StatelessWidget {
                       style:
                           TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
                     ),
-                    Text(
-                      '${price}',
-                      style:
-                          TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
-                    ),
+                    
                   ],
                 ),
                 Spacer()

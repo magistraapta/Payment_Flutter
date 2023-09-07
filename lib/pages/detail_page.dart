@@ -1,22 +1,30 @@
 import 'package:flutter/material.dart';
 
 class DetailPage extends StatelessWidget {
-  const DetailPage({Key? key}) : super(key: key);
+  final String name;
+  final String desc;
+  final String imageUrl;
+  const DetailPage(
+      {Key? key,
+      required this.desc,
+      required this.imageUrl,
+      required this.name})
+      : super(key: key);
 
   Widget information() {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16),
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       child: Row(
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Adidas NMD',
+                '${name}',
                 style: TextStyle(fontSize: 32, fontWeight: FontWeight.w700),
               ),
               Text(
-                'Unpaved trails and mixed surfaces are easy\nwhen you have the traction and support you\nneed. Casual enough for the daily commute.',
+                '${desc}',
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
               )
             ],
@@ -25,6 +33,16 @@ class DetailPage extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Widget checkoutButton() {
+    return Container(
+        margin: EdgeInsets.only(bottom: 53),
+        width: 357,
+        child: FilledButton(
+          onPressed: () {},
+          child: const Text('Checkout'),
+        ));
   }
 
   @override
@@ -38,12 +56,15 @@ class DetailPage extends StatelessWidget {
           children: [
             Container(
               width: double.infinity,
-              height: 400,
+              height: 350,
               decoration: BoxDecoration(
-                  image:
-                      DecorationImage(image: AssetImage('assets/item-1.png'))),
+                  image: DecorationImage(
+                      image: AssetImage('assets/${imageUrl}'),
+                      fit: BoxFit.fill)),
             ),
-            information()
+            information(),
+            Spacer(),
+            checkoutButton()
           ],
         ),
       ),
