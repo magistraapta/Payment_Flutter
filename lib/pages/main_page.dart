@@ -9,9 +9,26 @@ class MainPage extends StatelessWidget {
       margin: EdgeInsets.only(top: 30),
       child: Column(
         children: [
-          CardItem(),
-          CardItem(),
-          CardItem(),
+          CardItem(
+            name: 'adidas',
+            imageUrl: 'item-1.png',
+            price: 200,
+          ),
+          CardItem(
+            name: 'adidas',
+            imageUrl: 'item-2.png',
+            price: 200,
+          ),
+          CardItem(
+            name: 'adidas',
+            imageUrl: 'item-3.png',
+            price: 200,
+          ),
+          CardItem(
+            name: 'adidas',
+            imageUrl: 'item-4.png',
+            price: 200,
+          ),
         ],
       ),
     );
